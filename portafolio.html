@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Vania</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Whisper&display=swap" rel="stylesheet">
-  
+
   <style>
-    /* 🎨 ESTILOS GENERALES */
+    /* ✨ ESTILOS GENERALES */
     html, body {
       margin: 0;
       overflow-x: hidden;
@@ -60,8 +60,8 @@
       height: 100vh;
       padding: 20px;
       background-color: #e3c5d5;
-      background-repeat: no-repeat;
       background-size: cover;
+      background-repeat: no-repeat;
       box-shadow: 2px 0 5px rgba(0,0,0,0.1);
       position: fixed;
       top: 100px;
@@ -179,57 +179,22 @@
     #plantillas { background-color: #fffaeb; padding: 40px; border-radius: 24px; }
 
     /* 📱 RESPONSIVO MÓVIL */
- /* 📱 RESPONSIVO MÓVIL */
-@media screen and (max-width: 600px) {
-  .encabezado {
-    height: auto;
-    background-size: 120% auto;
-    background-repeat: repeat-x;
-    background-position: center bottom;
-    padding-bottom: 20px;
-  }
-
-  .contenido {
-    padding: 20px;
-  }
-}
-
-      .galeria {
-        flex-direction: column;
-        gap: 16px;
-        padding: 20px;
-      }
-
-      .tarjeta {
-        max-width: 100%;
-      }
-
-      .boton-contacto {
-        flex-direction: column;
-        padding: 10px 16px;
-        font-size: 15px;
-        text-align: center;
-      }
-
-      .boton-contacto img {
-        margin: 0 0 6px 0;
-      }
-
-      .boton-menu {
-        padding: 8px 16px;
-        font-size: 14px;
-        top: 12px;
-        left: 12px;
-      }
-
+    @media screen and (max-width: 600px) {
       .encabezado {
-        height: 80px;
+        height: 120px;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
+        padding: 20px 0;
+      }
+
+      .contenido {
+        padding: 20px;
       }
 
       nav {
         position: fixed;
-        top: 80px;
+        top: 120px;
         left: -100%;
         width: 100%;
         height: auto;
@@ -246,16 +211,38 @@
         pointer-events: auto;
       }
 
-      nav a {
-        font-size: 16px;
-        padding: 8px;
-        display: block;
+      .boton-menu {
+        padding: 8px 16px;
+        font-size: 14px;
+        top: 16px;
+        left: 16px;
+      }
+
+      .galeria {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .tarjeta {
+        max-width: 100%;
+      }
+
+      .boton-contacto {
+        flex-direction: column;
+        font-size: 15px;
+        padding: 10px 16px;
+        text-align: center;
+      }
+
+      .boton-contacto img {
+        margin: 0 0 6px 0;
       }
     }
   </style>
 </head>
 <body>
-    <header class="encabezado"></header>
+  <header class="encabezado"></header>
   <button id="toggleMenu" class="boton-menu">☰ Menú</button>
 
   <nav>
@@ -288,17 +275,17 @@
       <h2>Dibujos</h2>
       <div class="galeria">
         <div class="tarjeta"><img src="color3.jpg" alt="Círculo cromático"><h3>Círculo cromático</h3></div>
-        <div class="tarjeta"><img src="Color1.jpg" alt="Color1"><h3>Dibujo a color</h3></div>
+        <div class="tarjeta"><img src="color1.jpg" alt="Dibujo a color"><h3>Dibujo a color</h3></div>
         <div class="tarjeta"><img src="color2.jpg" alt="Dibujo a color"><h3>Dibujo a color</h3></div>
-        <div class="tarjeta"><img src="carboncillo1.jpg" alt="Carboncillo 1"><h3>Dibujo con carboncillo</h3></div>
-        <div class="tarjeta"><img src="carboncillo2.jpg" alt="Carboncillo 2"><h3>Dibujo con carboncillo</h3></div>
+        <div class="tarjeta"><img src="carboncillo1.jpg" alt="Dibujo con carboncillo"><h3>Dibujo con carboncillo</h3></div>
+        <div class="tarjeta"><img src="carboncillo2.jpg" alt="Dibujo con carboncillo"><h3>Dibujo con carboncillo</h3></div>
       </div>
     </section>
 
     <section id="digitales" class="seccion">
       <h2>Digitales</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="Infografia.jpg" alt="Infografia"><h3>Infografía digital</h3></div>
+        <div class="tarjeta"><img src="infografia.jpg" alt="Infografía digital"><h3>Infografía digital</h3></div>
         <div class="tarjeta"><img src="digital2.jpg" alt="Doodle mágico"><h3>Doodle mágico</h3></div>
       </div>
     </section>
@@ -306,15 +293,15 @@
     <section id="esculturas" class="seccion">
       <h2>Esculturas</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="escultura1.jpg" alt="Woodly"><h3>Woodly coleccionable</h3></div>
-        <div class="tarjeta"><img src="escultura2.jpg" alt="Decorativo"><h3>Modelo decorativo</h3></div>
+        <div class="tarjeta"><img src="escultura1.jpg" alt="Woodly coleccionable"><h3>Woodly coleccionable</h3></div>
+        <div class="tarjeta"><img src="escultura2.jpg" alt="Modelo decorativo"><h3>Modelo decorativo</h3></div>
       </div>
     </section>
 
     <section id="plantillas" class="seccion">
       <h2>Plantillas</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="plantilla1.jpg" alt="Empaque"><h3>Empaque con corazón</h3></div>
+        <div class="tarjeta"><img src="plantilla1.jpg" alt="Empaque con corazón"><h3>Empaque con corazón</h3></div>
         <div class="tarjeta"><img src="plantilla2.jpg" alt="Identidad visual"><h3>Identidad visual</h3></div>
       </div>
     </section>
@@ -349,7 +336,6 @@
         activa.classList.add('activa');
       }
 
-      // 🌼 Oculta el menú tras seleccionar
       const menu = document.querySelector('nav');
       menu.classList.remove('visible');
     }
