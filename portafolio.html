@@ -182,6 +182,18 @@
     @media screen and (max-width: 600px) {
       .contenido {
         padding: 20px;
+        nav {
+  left: -100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: left 0.3s ease, opacity 0.3s ease;
+}
+
+nav.visible {
+  left: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
       }
 
       .galeria {
