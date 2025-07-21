@@ -182,28 +182,70 @@
     @media screen and (max-width: 600px) {
       .contenido {
         padding: 20px;
-       nav {
-  position: fixed;
-  top: 80px;
-  left: -100%;
-  width: 100%;
-  height: auto;
-  background-color: #e3c5d5;
-  opacity: 0;
-  pointer-events: none;
-  transition: left 0.4s ease, opacity 0.4s ease;
-}
+      }
 
-nav.visible {
-  left: 0;
-  opacity: 1;
-  pointer-events: auto;
-}
+      .galeria {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .tarjeta {
+        max-width: 100%;
+      }
+
+      .boton-contacto {
+        flex-direction: column;
+        padding: 10px 16px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .boton-contacto img {
+        margin: 0 0 6px 0;
+      }
+
+      .boton-menu {
+        padding: 8px 16px;
+        font-size: 14px;
+        top: 12px;
+        left: 12px;
+      }
+
+      .encabezado {
+        height: 80px;
+        background-size: cover;
+      }
+
+      nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        background-color: #e3c5d5;
+        opacity: 0;
+        pointer-events: none;
+        transition: left 0.4s ease, opacity 0.4s ease;
+        z-index: 1000;
+      }
+
+      nav.visible {
+        left: 0;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      nav a {
+        font-size: 16px;
+        padding: 8px;
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="encabezado"></header>
+    <header class="encabezado"></header>
   <button id="toggleMenu" class="boton-menu">☰ Menú</button>
 
   <nav>
@@ -216,7 +258,8 @@ nav.visible {
     <a onclick="mostrarSeccion('bio')">Sobre mí</a>
     <a onclick="mostrarSeccion('contacto')">Contacto</a>
   </nav>
-    <div class="contenido">
+
+  <div class="contenido">
     <section id="inicio" class="seccion activa">
       <h2><span class="nombre-whisper">Vania Isabel Valle Vazquez</span></h2>
       <p>Diseñadora mexicana en proceso.</p>
@@ -226,43 +269,43 @@ nav.visible {
     <section id="galeria" class="seccion">
       <h2>Galería completa</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="personaje.jpg"><h3>Personaje encantado</h3></div>
-        <div class="tarjeta"><img src="doodles.png"><h3>Doodles mágicos</h3></div>
+        <div class="tarjeta"><img src="personaje.jpg" alt="Personaje encantado"><h3>Personaje encantado</h3></div>
+        <div class="tarjeta"><img src="doodles.png" alt="Doodles mágicos"><h3>Doodles mágicos</h3></div>
       </div>
     </section>
 
     <section id="dibujos" class="seccion">
       <h2>Dibujos</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="color3.jpg"><h3>Círculo cromático</h3></div>
-        <div class="tarjeta"><img src="color1.jpg"><h3>Dibujo a color</h3></div>
-        <div class="tarjeta"><img src="color2.jpg"><h3>Dibujo a color</h3></div>
-        <div class="tarjeta"><img src="carboncillo1.jpg"><h3>Dibujo con carboncillo</h3></div>
-        <div class="tarjeta"><img src="carboncillo2.jpg"><h3>Dibujo con carboncillo</h3></div>
+        <div class="tarjeta"><img src="color3.jpg" alt="Círculo cromático"><h3>Círculo cromático</h3></div>
+        <div class="tarjeta"><img src="color1.jpg" alt="Dibujo a color"><h3>Dibujo a color</h3></div>
+        <div class="tarjeta"><img src="color2.jpg" alt="Dibujo a color"><h3>Dibujo a color</h3></div>
+        <div class="tarjeta"><img src="carboncillo1.jpg" alt="Carboncillo 1"><h3>Dibujo con carboncillo</h3></div>
+        <div class="tarjeta"><img src="carboncillo2.jpg" alt="Carboncillo 2"><h3>Dibujo con carboncillo</h3></div>
       </div>
     </section>
 
     <section id="digitales" class="seccion">
       <h2>Digitales</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="infografia.jpg"><h3>Infografía digital</h3></div>
-        <div class="tarjeta"><img src="digital2.jpg"><h3>Doodle mágico</h3></div>
+        <div class="tarjeta"><img src="infografia.jpg" alt="Infografía"><h3>Infografía digital</h3></div>
+        <div class="tarjeta"><img src="digital2.jpg" alt="Doodle mágico"><h3>Doodle mágico</h3></div>
       </div>
     </section>
 
     <section id="esculturas" class="seccion">
       <h2>Esculturas</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="escultura1.jpg"><h3>Woodly coleccionable</h3></div>
-        <div class="tarjeta"><img src="escultura2.jpg"><h3>Modelo decorativo</h3></div>
+        <div class="tarjeta"><img src="escultura1.jpg" alt="Woodly"><h3>Woodly coleccionable</h3></div>
+        <div class="tarjeta"><img src="escultura2.jpg" alt="Decorativo"><h3>Modelo decorativo</h3></div>
       </div>
     </section>
 
     <section id="plantillas" class="seccion">
       <h2>Plantillas</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="plantilla1.jpg"><h3>Empaque con corazón</h3></div>
-        <div class="tarjeta"><img src="plantilla2.jpg"><h3>Identidad visual</h3></div>
+        <div class="tarjeta"><img src="plantilla1.jpg" alt="Empaque"><h3>Empaque con corazón</h3></div>
+        <div class="tarjeta"><img src="plantilla2.jpg" alt="Identidad visual"><h3>Identidad visual</h3></div>
       </div>
     </section>
 
@@ -284,13 +327,10 @@ nav.visible {
       <a href="https://wa.me/5534022081" target="_blank" class="boton-contacto">
         <img src="tulipan.jpg" alt="Tulipán"> Escríbeme por WhatsApp
       </a>
-
-      <!-- ✨ Botón con enlace a tu sitio publicado -->
       <a href="https://iamvaniav.github.io/portafolio/" target="_blank" class="boton-contacto">
         <img src="tulipan.jpg" alt="Tulipán"> Ver mi portafolio publicado
       </a>
 
-      <!-- 🌸 Código QR decorado -->
       <div style="text-align:center; margin-top:40px; position: relative; display: inline-block;">
         <img src="flores-esquina.png" alt="Decoración floral" style="position: absolute; top: -20px; left: -20px; width: 60px;">
         <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://iamvaniav.github.io/portafolio/&size=200x200"
@@ -310,6 +350,8 @@ nav.visible {
       if (activa) {
         activa.classList.add('activa');
       }
+
+      // 🌼 Oculta el menú tras seleccionar
       const menu = document.querySelector('nav');
       menu.classList.remove('visible');
     }
