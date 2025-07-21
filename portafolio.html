@@ -2,61 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio de Vania</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Whisper&display=swap" rel="stylesheet">
+  
   <style>
-@media screen and (max-width: 600px) {
-  .contenido {
-    padding: 20px;
-  }
-
-  .galeria {
-    flex-direction: column;
-    gap: 16px;
-    padding: 20px;
-  }
-
-  .tarjeta {
-    max-width: 100%;
-  }
-
-  .boton-contacto {
-    flex-direction: column;
-    padding: 10px 16px;
-    font-size: 15px;
-    text-align: center;
-  }
-
-  .boton-contacto img {
-    margin: 0 0 6px 0;
-  }
-
-  .boton-menu {
-    padding: 8px 16px;
-    font-size: 14px;
-    top: 12px;
-    left: 12px;
-  }
-
-  .encabezado {
-    height: 80px;
-    background-size: cover;
-  }
-
-  nav {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 80px;
-    left: 0;
-  }
-
-  nav a {
-    font-size: 16px;
-    padding: 8px;
-  }
-}
+    /* 🎨 ESTILOS GENERALES */
     html, body {
       margin: 0;
       overflow-x: hidden;
@@ -80,23 +31,21 @@
     }
 
     .boton-menu {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1100;
-  background-color: #8a668e;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
- animation: flotante 2s infinite ease-in-out;
-
-}
-
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      background-color: #8a668e;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      animation: flotante 2s infinite ease-in-out;
+    }
 
     @keyframes flotante {
       0% { transform: translateY(0px); }
@@ -106,21 +55,20 @@
 
     .boton-menu:hover { transform: scale(1.05); }
 
-  nav {
-  width: 200px;
-  height: 100vh;
-  padding: 20px;
-  background-color: #e3c5d5; /* 🌸 lila pastel encantado */
-  background-image: none;     /* asegúrate de que no haya imagen tapando */
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  position: fixed;
-  top: 100px;
-  left: -220px;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
+    nav {
+      width: 200px;
+      height: 100vh;
+      padding: 20px;
+      background-color: #e3c5d5;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 100px;
+      left: -220px;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
 
     nav.visible { left: 0; }
 
@@ -151,7 +99,7 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     h2 { color: #812a57; }
@@ -229,6 +177,59 @@
     #digitales  { background-color: #fff0f5; padding: 40px; border-radius: 24px; }
     #esculturas { background-color: #f0fefc; padding: 40px; border-radius: 24px; }
     #plantillas { background-color: #fffaeb; padding: 40px; border-radius: 24px; }
+
+    /* 📱 RESPONSIVO MÓVIL */
+    @media screen and (max-width: 600px) {
+      .contenido {
+        padding: 20px;
+      }
+
+      .galeria {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .tarjeta {
+        max-width: 100%;
+      }
+
+      .boton-contacto {
+        flex-direction: column;
+        padding: 10px 16px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .boton-contacto img {
+        margin: 0 0 6px 0;
+      }
+
+      .boton-menu {
+        padding: 8px 16px;
+        font-size: 14px;
+        top: 12px;
+        left: 12px;
+      }
+
+      .encabezado {
+        height: 80px;
+        background-size: cover;
+      }
+
+      nav {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 80px;
+        left: 0;
+      }
+
+      nav a {
+        font-size: 16px;
+        padding: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -245,8 +246,7 @@
     <a onclick="mostrarSeccion('bio')">Sobre mí</a>
     <a onclick="mostrarSeccion('contacto')">Contacto</a>
   </nav>
-
-  <div class="contenido">
+    <div class="contenido">
     <section id="inicio" class="seccion activa">
       <h2><span class="nombre-whisper">Vania Isabel Valle Vazquez</span></h2>
       <p>Diseñadora mexicana en proceso.</p>
@@ -260,25 +260,22 @@
         <div class="tarjeta"><img src="doodles.png"><h3>Doodles mágicos</h3></div>
       </div>
     </section>
+
     <section id="dibujos" class="seccion">
       <h2>Dibujos</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="color3.jpg"><h3>Circulo cromatico</h3></div>
-        <div class="tarjeta"><img src="color1.jpg"><h3>Dibujo a color</h3>
-</div>
-	<div class="tarjeta"><img src="color2.jpg"><h3>dibujo a color</h3>
-</div>
-	<div class="tarjeta"><img src="carboncillo1.jpg"><h3>dibujo con carboncillo</h3>
-</div>
-<div class="tarjeta"><img src="carboncillo2.jpg"><h3>dibujo con carboncillo</h3>
-</div>
+        <div class="tarjeta"><img src="color3.jpg"><h3>Círculo cromático</h3></div>
+        <div class="tarjeta"><img src="color1.jpg"><h3>Dibujo a color</h3></div>
+        <div class="tarjeta"><img src="color2.jpg"><h3>Dibujo a color</h3></div>
+        <div class="tarjeta"><img src="carboncillo1.jpg"><h3>Dibujo con carboncillo</h3></div>
+        <div class="tarjeta"><img src="carboncillo2.jpg"><h3>Dibujo con carboncillo</h3></div>
       </div>
     </section>
 
     <section id="digitales" class="seccion">
       <h2>Digitales</h2>
       <div class="galeria">
-        <div class="tarjeta"><img src="infografia.jpg"><h3>Infografia digital</h3></div>
+        <div class="tarjeta"><img src="infografia.jpg"><h3>Infografía digital</h3></div>
         <div class="tarjeta"><img src="digital2.jpg"><h3>Doodle mágico</h3></div>
       </div>
     </section>
@@ -301,7 +298,7 @@
 
     <section id="bio" class="seccion">
       <h2>Sobre mí</h2>
-	<p>Matricula: 2242017903</p>
+      <p>Matrícula: 2242017903</p>
       <p>Estudiante de Diseño Industrial en la Universidad Autónoma Metropolitana.</p>
       <p>Personajes coleccionables, empaques con alma y magia mexicana.</p>
     </section>
@@ -317,6 +314,21 @@
       <a href="https://wa.me/5534022081" target="_blank" class="boton-contacto">
         <img src="tulipan.jpg" alt="Tulipán"> Escríbeme por WhatsApp
       </a>
+
+      <!-- ✨ Botón con enlace a tu sitio publicado -->
+      <a href="https://iamvaniav.github.io/portafolio/" target="_blank" class="boton-contacto">
+        <img src="tulipan.jpg" alt="Tulipán"> Ver mi portafolio publicado
+      </a>
+
+      <!-- 🌸 Código QR decorado -->
+      <div style="text-align:center; margin-top:40px; position: relative; display: inline-block;">
+        <img src="flores-esquina.png" alt="Decoración floral" style="position: absolute; top: -20px; left: -20px; width: 60px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://iamvaniav.github.io/portafolio/&size=200x200"
+             alt="QR a portafolio publicado"
+             style="border-radius:16px; box-shadow: 0 6px 12px rgba(129,42,87,0.2); border: 4px dashed #e3c5d5;">
+        <img src="flores-esquina.png" alt="Decoración floral" style="position: absolute; bottom: -20px; right: -20px; width: 60px; transform: rotate(180deg);">
+        <p style="margin-top: 12px; font-weight: bold; color: #812a57;">Escanéame para visitar mi sitio</p>
+      </div>
     </section>
   </div>
 
