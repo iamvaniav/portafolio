@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portafolio de Vania</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Whisper&display=swap" rel="stylesheet">
+  <style>
+
+    html, body {
+      margin: 0;
+      overflow-x: hidden;
+      background-color: #fff8f2;
+      font-family: 'Quicksand', sans-serif;
+      color: #333;
+    }
+
+    .encabezado {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-image: url('encabezado.png');
+      background-repeat: repeat-x;
+      background-size: contain;
+      background-position: bottom;
+      border-bottom: 2px solid #812a57;
+      z-index: 1000;
+    }
+
+    .boton-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background-color: #8a668e;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+ animation: flotante 2s infinite ease-in-out;
+
+}
+
+
+    @keyframes flotante {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .boton-menu:hover { transform: scale(1.05); }
+
+  nav {
+  width: 200px;
+  height: 100vh;
+  padding: 20px;
+  background-color: #e3c5d5; /* 🌸 lila pastel encantado */
+  background-image: none;     /* asegúrate de que no haya imagen tapando */
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 100px;
+  left: -220px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+    nav.visible { left: 0; }
+
+    nav a {
+      display: block;
+      margin-bottom: 10px;
+      color: #812a57;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contenido {
+      margin-top: 140px;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .seccion {
+      display: none;
+      text-align: center;
+    }
+
+    .seccion.activa {
+      display: block;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 { color: #812a57; }
+
+    .nombre-whisper {
+      font-family: 'Whisper', cursive;
+      font-size: 36px;
+      color: #812a57;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px;
+      border-radius: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tarjeta {
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(129, 42, 87, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tarjeta img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(129, 42, 87, 0.25);
+    }
+
+    .tarjeta h3 {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #812a57;
+    }
+
+    .boton-contacto {
+      display: inline-flex;
+      align-items: center;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #584174;
+      color: #fff;
+      border-radius: 30px;
+      border: 3px dashed #fff0f5;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(129, 42, 87, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .boton-contacto:hover {
+      background-color: #6a4b8b;
+      transform: scale(1.05);
+    }
+
+    .boton-contacto img {
+      height: 24px;
+      margin-right: 10px;
+      border-radius: 6px;
+    }
+
+    #dibujos    { background-color: #faf5ff; padding: 40px; border-radius: 24px; }
+    #digitales  { background-color: #fff0f5; padding: 40px; border-radius: 24px; }
+    #esculturas { background-color: #f0fefc; padding: 40px; border-radius: 24px; }
+    #plantillas { background-color: #fffaeb; padding: 40px; border-radius: 24px; }
+  </style>
+</head>
+<body>
+  <header class="encabezado"></header>
+  <button id="toggleMenu" class="boton-menu">☰ Menú</button>
+
+  <nav>
+    <a onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a onclick="mostrarSeccion('galeria')">🎨 Galería completa</a>
+    <a onclick="mostrarSeccion('dibujos')">⋆ Dibujos</a>
+    <a onclick="mostrarSeccion('digitales')">⋆ Digitales</a>
+    <a onclick="mostrarSeccion('esculturas')">⋆ Esculturas</a>
+    <a onclick="mostrarSeccion('plantillas')">⋆ Plantillas</a>
+    <a onclick="mostrarSeccion('bio')">Sobre mí</a>
+    <a onclick="mostrarSeccion('contacto')">Contacto</a>
+  </nav>
+
+  <div class="contenido">
+    <section id="inicio" class="seccion activa">
+      <h2><span class="nombre-whisper">Vania Isabel Valle Vazquez</span></h2>
+      <p>Diseñadora mexicana en proceso.</p>
+      <p>Bienvenido a mi portafolio creativo.</p>
+    </section>
+
+    <section id="galeria" class="seccion">
+      <h2>Galería completa</h2>
+      <div class="galeria">
+        <div class="tarjeta"><img src="personaje.jpg"><h3>Personaje encantado</h3></div>
+        <div class="tarjeta"><img src="doodles.png"><h3>Doodles mágicos</h3></div>
+      </div>
+    </section>
+    <section id="dibujos" class="seccion">
+      <h2>Dibujos</h2>
+      <div class="galeria">
+        <div class="tarjeta"><img src="color3.jpg"><h3>Circulo cromatico</h3></div>
+        <div class="tarjeta"><img src="color1.jpg"><h3>Dibujo a color</h3>
+</div>
+	<div class="tarjeta"><img src="color2.jpg"><h3>dibujo a color</h3>
+</div>
+	<div class="tarjeta"><img src="carboncillo1.jpg"><h3>dibujo con carboncillo</h3>
+</div>
+<div class="tarjeta"><img src="carboncillo2.jpg"><h3>dibujo con carboncillo</h3>
+</div>
+      </div>
+    </section>
+
+    <section id="digitales" class="seccion">
+      <h2>Digitales</h2>
+      <div class="galeria">
+        <div class="tarjeta"><img src="infografia.jpg"><h3>Infografia digital</h3></div>
+        <div class="tarjeta"><img src="digital2.jpg"><h3>Doodle mágico</h3></div>
+      </div>
+    </section>
+
+    <section id="esculturas" class="seccion">
+      <h2>Esculturas</h2>
+      <div class="galeria">
+        <div class="tarjeta"><img src="escultura1.jpg"><h3>Woodly coleccionable</h3></div>
+        <div class="tarjeta"><img src="escultura2.jpg"><h3>Modelo decorativo</h3></div>
+      </div>
+    </section>
+
+    <section id="plantillas" class="seccion">
+      <h2>Plantillas</h2>
+      <div class="galeria">
+        <div class="tarjeta"><img src="plantilla1.jpg"><h3>Empaque con corazón</h3></div>
+        <div class="tarjeta"><img src="plantilla2.jpg"><h3>Identidad visual</h3></div>
+      </div>
+    </section>
+
+    <section id="bio" class="seccion">
+      <h2>Sobre mí</h2>
+	<p>Matricula: 2242017903</p>
+      <p>Estudiante de Diseño Industrial en la Universidad Autónoma Metropolitana.</p>
+      <p>Personajes coleccionables, empaques con alma y magia mexicana.</p>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <a href="mailto:vaniav_vazquez@hotmail.com" class="boton-contacto">
+        <img src="tulipan.jpg" alt="Tulipán"> Envíame un correo
+      </a>
+      <a href="https://instagram.com/iamvaniav" target="_blank" class="boton-contacto">
+        <img src="tulipan.jpg" alt="Tulipán"> Visita mi Instagram
+      </a>
+      <a href="https://wa.me/5534022081" target="_blank" class="boton-contacto">
+        <img src="tulipan.jpg" alt="Tulipán"> Escríbeme por WhatsApp
+      </a>
+    </section>
+  </div>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.seccion');
+      secciones.forEach(sec => sec.classList.remove('activa'));
+      const activa = document.getElementById(id);
+      if (activa) {
+        activa.classList.add('activa');
+      }
+      const menu = document.querySelector('nav');
+      menu.classList.remove('visible');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const botonMenu = document.getElementById('toggleMenu');
+      const menu = document.querySelector('nav');
+      botonMenu.addEventListener('click', function () {
+        menu.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+</html>
